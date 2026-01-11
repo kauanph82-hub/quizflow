@@ -8,7 +8,11 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "db:init": "node scripts/init-db.js",
+    "db:push": "npm run db:init",
+    "db:setup": "node scripts/init-db-vercel.js",
+    "postbuild": "echo 'Build completed! Run npm run db:setup with your POSTGRES_URL to initialize the database.'"
   },
   "dependencies": {
     "@auth/core": "^0.34.3",
