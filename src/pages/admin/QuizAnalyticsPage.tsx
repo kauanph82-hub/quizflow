@@ -55,8 +55,8 @@ export const QuizAnalyticsPage = () => {
     ? Math.round((quizAnalytics.leads / quizAnalytics.impressions) * 100) || 0
     : 0;
 
-  const handleExportLeads = () => {
-    const data = exportLeads(quizId!);
+  const handleExportLeads = async () => {
+    const data = await exportLeads(quizId!);
     const csv = [
       ['Nome', 'Email', 'WhatsApp', 'Score', 'Perfil', 'Data', 'Completo'],
       ...data.map(lead => [
